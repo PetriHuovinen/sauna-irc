@@ -13,7 +13,7 @@ $VERSION = "1.00"; %IRSSI = {
   authors => 'Petri Huovinen',
   name => 'Saunan lämpötilan haku',
   description => 'Hakee tupsulan saunan lämpötilan internetistä ja näyttää sen irkissä',
-  license => 'Public Domain'
+  license => 'MIT'
 };
 
 sub bot_action($$$$) {
