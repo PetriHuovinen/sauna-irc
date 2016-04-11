@@ -12,7 +12,7 @@ use vars qw($VERSION %IRSSI);
 $VERSION = "1.00"; %IRSSI = {
   authors => 'Petri Huovinen',
   name => 'Saunan lämpötilan haku',
-  description => 'Hakee tupsulan saunan lämpötilan internetistä ja näyttää sen irki$
+  description => 'Hakee tupsulan saunan lämpötilan internetistä ja näyttää sen irkissä',
   license => 'Public Domain'
 };
 
@@ -36,12 +36,12 @@ sub sauna {
 
   if ( looks_like_number($temp) ) {
     if ( $temp > 65 ) {
-      $witem->{server}->command('MSG '.$channel.' Saunan lämpötila: '.$decoded_temp$
+      $witem->{server}->command('MSG '.$channel.' Saunan lämpötila: '.$decoded_temp->{'currentTemperature'}.' °C, trendi: Lotisoo');
     } else {
-      $witem->{server}->command('MSG '.$channel.' Saunan lämpötila: '.$decoded_temp$
+      $witem->{server}->command('MSG '.$channel.' Saunan lämpötila: '.$decoded_temp->{'currentTemperature'}.' °C, trendi: '.$decoded_temp->{'trend'});
     }
   } else {
-    $witem->{server}->command('MSG '.$channel.' Saunan lämpötila: '.$decoded_temp->$
+    $witem->{server}->command('MSG '.$channel.' Saunan lämpötila: '.$decoded_temp->{'currentTemperature'}.' °C, trendi: '.$decoded_temp->{'trend'});
   }
 }
 
